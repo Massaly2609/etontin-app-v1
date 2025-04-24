@@ -82,9 +82,16 @@
                                         <a href="{{ route('participant.tontines.show', $tontine) }}" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium flex items-center">
                                             Détails <i class="fas fa-chevron-right ml-1 text-xs"></i>
                                         </a>
-                                        <form action="{{ route('participant.tontines.leave', $tontine) }}" method="POST">
+                                        {{-- <form action="{{ route('participant.tontines.leave', $tontine) }}" method="POST">
                                             @csrf
                                             <button type="submit" class="text-red-600 hover:text-red-800 text-sm font-medium flex items-center" onclick="return confirm('Êtes-vous sûr de vouloir quitter cette tontine?')">
+                                                Quitter <i class="fas fa-sign-out-alt ml-1 text-xs"></i>
+                                            </button>
+                                        </form> --}}
+
+                                        <form action="{{ route('participant.tontines.leave', $tontine) }}" method="POST" id="leaveTontineForm">
+                                            @csrf
+                                            <button type="button" onclick="confirmLeave()" class="text-red-600 hover:text-red-800 text-sm font-medium flex items-center">
                                                 Quitter <i class="fas fa-sign-out-alt ml-1 text-xs"></i>
                                             </button>
                                         </form>
@@ -98,4 +105,60 @@
             </main>
         </div>
     </div>
+
+    <script>
+        function confirmLeave() {
+            Swal.fire({
+                title: 'Quitter la tontine ?',
+                html: `
+                    <div class="text-center">
+                        <i class="fas fa-exclamation-triangle text-yellow-400 text-5xl mb-4"></i>
+                        <p class="text-gray-700 mb-2">Êtes-vous sûr de vouloir quitter cette tontine ?</p>
+                        <p class="text-xs text-gray-500">Cette action est irréversible</p>
+                    </div>
+                `,
+                showCancelButton: true,
+                confirmButtonText: 'Oui, quitter',
+                cancelButtonText: 'Annuler',
+                customClass: {
+                    confirmButton: 'bg-red-500 hover:bg-red-600 px-4 py-2 rounded',
+                    cancelButton: 'bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded ml-2'
+                },
+                buttonsStyling: false,
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Soumettre le formulaire
+                    document.getElementById('leaveTontineForm').submit();
+
+                    // Afficher un loader pendant la soumission
+                    Swal.fire({
+                        title: 'Traitement en cours',
+                        html: 'Nous traitons votre demande...',
+                        timerProgressBar: true,
+                        didOpen: () => {
+                            Swal.showLoading()
+                        },
+                        willClose: () => {
+                            // Gérer les messages flash ici si besoin
+                            @if(session('success'))
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Succès !',
+                                    text: '{{ session('success') }}',
+                                    timer: 1000
+                                })
+                            @elseif(session('error'))
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Erreur...',
+                                    text: '{{ session('error') }}'
+                                })
+                            @endif
+                        }
+                    });
+                }
+            });
+        }
+        </script>
 </x-app-layout>

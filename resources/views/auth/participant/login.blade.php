@@ -1,11 +1,7 @@
 <x-auth-guest>
-
-
     <div class="min-h-screen flex items-center justify-center p-4 bg-gray-50">
         <div class="w-full max-w-4xl bg-white rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row">
             <!-- Section visuelle -->
-      {{-- message --}}
-      {{-- {!! Toastr::message() !!} --}}
             <div class="md:w-1/3 bg-gradient-to-b from-blue-50 to-indigo-50 p-6 hidden md:flex flex-col justify-center">
                 <div class="text-center space-y-4">
                     <div class="inline-block p-3 bg-blue-600 rounded-xl">

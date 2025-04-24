@@ -93,6 +93,7 @@
                             <i class="fas fa-unlock-alt mr-2"></i> Accès au Panel
                         </x-primary-button>
 
+
                         <!-- Lien retour -->
                         <div class="text-center pt-4 border-t border-gray-200 dark:border-gray-800">
                             <p class="text-sm text-gray-600 dark:text-gray-400">

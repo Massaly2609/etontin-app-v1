@@ -91,12 +91,7 @@
                 <!-- Suppression -->
                 <div x-show="activeTab === 'delete'" class="bg-white rounded-2xl shadow-xl p-6 sm:p-8 transition-all duration-300">
                     <div class="max-w-2xl">
-                        <h3 class="text-xl font-semibold mb-6 flex items-center">
-                            <svg class="w-6 h-6 mr-2 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
-                            </svg>
-                            Suppression du compte
-                        </h3>
+
                         <div class="bg-red-50 p-4 rounded-lg">
                             @include('profile.partials.delete-user-form')
                         </div>
@@ -106,4 +101,3 @@
         </div>
     </div>
 </x-app-layout>
-

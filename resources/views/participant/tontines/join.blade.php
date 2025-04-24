@@ -115,69 +115,7 @@
                                             </div>
                                         </div>
                                     </form>
-                                    {{-- <form method="POST" action="{{ route('participant.tontines.join', $tontine) }}">
-                                        @csrf
 
-                                        <!-- Nouveaux champs ajoutés -->
-                                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                                            <div>
-                                                <label for="date_naissance" class="block text-sm font-medium text-gray-700">Date de naissance</label>
-                                                <input type="date" name="date_naissance" id="date_naissance"
-                                                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg" required>
-                                            </div>
-
-                                            <div>
-                                                <label for="cni" class="block text-sm font-medium text-gray-700">Numéro CNI</label>
-                                                <input type="text" name="cni" id="cni" placeholder="Votre numéro CNI"
-                                                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg" required>
-                                            </div>
-
-                                            <div>
-                                                <label for="adresse" class="block text-sm font-medium text-gray-700">Adresse</label>
-                                                <input type="text" name="adresse" id="adresse" placeholder="Votre adresse"
-                                                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg" required>
-                                            </div>
-                                        </div>
-
-                                        <div class="space-y-4">
-                                            <div>
-                                                <label for="montant" class="block text-sm font-medium text-gray-700">Montant initial (FCFA)</label>
-                                                <input type="number" name="montant" id="montant"
-                                                       min="{{ $tontine->montant_de_base }}"
-                                                       value="{{ $tontine->montant_de_base }}"
-                                                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500 transition duration-150"
-                                                       required>
-                                                <p class="mt-1 text-sm text-gray-500">Minimum: {{ number_format($tontine->montant_de_base, 0, ',', ' ') }} FCFA</p>
-                                            </div>
-
-                                            <div>
-                                                <label for="moyen_paiement" class="block text-sm font-medium text-gray-700">Moyen de paiement</label>
-                                                <select id="moyen_paiement" name="moyen_paiement"
-                                                        class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500 transition duration-150"
-                                                        required>
-                                                    <option value="">Sélectionnez...</option>
-                                                    <option value="WAVE">Wave</option>
-                                                    <option value="OM">Orange Money</option>
-                                                    <option value="ESPECES">Espèces</option>
-                                                </select>
-                                            </div>
-
-                                            <div id="transactionField">
-                                                <label for="numero_transaction" class="block text-sm font-medium text-gray-700">Numéro de transaction</label>
-                                                <input type="text" name="numero_transaction" id="numero_transaction"
-                                                       placeholder="Ex: WAVE123456789"
-                                                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500 transition duration-150">
-                                                <p class="mt-1 text-sm text-gray-500">Pour les paiements électroniques uniquement</p>
-                                            </div>
-
-                                            <div class="pt-4">
-                                                <button type="submit" class="w-full px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-300 inline-flex items-center justify-center">
-                                                    <i class="fas fa-check-circle mr-2"></i> Confirmer l'inscription
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <!-- Vos champs existants... -->
-                                    </form> --}}
                                 </div>
                             </div>
                         </div>

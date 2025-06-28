@@ -17,10 +17,12 @@ return new class extends Migration
             $table->primary(['idUser', 'idTontine']);
             $table->integer('montant');
             $table->enum('moyen_paiement', ['ESPECES', 'WAVE', 'OM']);
-            $table->timestamps();
+
 
             $table->foreign('idUser')->references('id')->on('users');
             $table->foreign('idTontine')->references('id')->on('tontines');
+
+             $table->timestamps();
         });
     }
 

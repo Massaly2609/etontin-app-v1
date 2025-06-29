@@ -64,15 +64,15 @@
 
                     <!-- Liens vers les rapports détaillés -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <a href="{{ route('gerant.reports.tontines') }}" class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                        <a href="" class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
                             <h2 class="text-xl font-bold text-gray-800 mb-4">Rapport des Tontines</h2>
                             <p class="text-gray-600">Voir les détails des Tontines gérées</p>
                         </a>
-                        <a href="{{ route('gerant.reports.participants') }}" class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                        <a href="#" class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
                             <h2 class="text-xl font-bold text-gray-800 mb-4">Rapport des Participants</h2>
                             <p class="text-gray-600">Voir les détails des participants</p>
                         </a>
-                        <a href="{{ route('gerant.reports.cotisations') }}" class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                        <a href="#" class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
                             <h2 class="text-xl font-bold text-gray-800 mb-4">Rapport des Cotisations</h2>
                             <p class="text-gray-600">Voir les détails des cotisations</p>
                         </a>

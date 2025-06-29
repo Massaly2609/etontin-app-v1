@@ -1,184 +1,125 @@
 <x-app-layout>
-    <!-- Main Container -->
-    <div class="min-h-screen bg-gray-50">
-        <!-- Contenu Principal -->
+    <div class="min-h-screen bg-gray-100 font-sans antialiased">
         <div class="flex flex-1 h-screen">
-            <!-- Sidebar Modernisée -->
             @include('layouts.leftBar')
 
-            <!-- Main Content -->
-            <main class="flex-1 p-5 bg-gray-50 pt-10 overflow-y-auto">
-                <!-- En-tête Modernisé -->
-                <div class="bg-gradient-to-r from-blue-600 to-blue-500 px-8 pt-24 pb-16 rounded-b-3xl shadow-2xl ">
-                    <div class="max-w-7xl mx-auto">
+            <main class="flex-1 p-6 bg-gray-100 overflow-y-auto">
+                <div class="bg-gradient-to-br from-blue-600 to-blue-800 px-8 pt-24 pb-16 rounded-b-3xl shadow-2xl relative overflow-hidden">
+                    <div class="absolute inset-0 bg-blue-700 opacity-20 transform -skew-y-6"></div>
+                    <div class="max-w-7xl mx-auto relative z-10">
                         <div class="flex items-center justify-between -mt-16">
-                            <div class="space-y-4">
-                                <h1 class="text-4xl font-bold text-white tracking-tight">
+                            <div class="space-y-3">
+                                <h1 class="text-5xl font-extrabold text-white tracking-tight leading-tight">
                                     {{ __('Tableau de Bord Administrateur') }}
                                 </h1>
-                                <p class="text-blue-100 text-lg font-light">
+                                <p class="text-blue-100 text-lg font-light opacity-90">
                                     Gestion globale des tontines, gérants et participants
                                 </p>
                             </div>
                             <div class="hidden md:block">
-                                <div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm">
-                                    <i class="fas fa-chart-line text-3xl text-white"></i>
+                                <div class="bg-white/20 p-5 rounded-full backdrop-blur-sm shadow-xl animate-fade-in-up">
+                                    <i class="fas fa-chart-line text-4xl text-white"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Contenu Principal -->
-                <div class="max-w-7xl mx-auto px-8 -mt-10">
-                    <!-- Grille de Statistiques -->
-                    {{-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                        <!-- Carte Statistique Modernisée -->
-                            <!-- Carte Tontines -->
-                            <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-blue-500">
-                                <div class="flex justify-between items-center">
-                                    <div>
-                                        <p class="text-sm text-gray-500">Tontines Actives</p>
-                                        <p class="text-3xl font-bold mt-2">1,234</p>
-                                    </div>
-                                    <div class="bg-blue-100 p-4 rounded-full">
-                                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <a href="#" class="mt-4 inline-flex items-center text-blue-600 hover:text-blue-800 text-sm">
-                                    Voir plus
-                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                    </svg>
-                                </a>
-                            </div>
-
-                            <!-- Carte Gérants -->
-                            <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-500">
-                                <div class="flex justify-between items-center">
-                                    <div>
-                                        <p class="text-sm text-gray-500">Gérants Actifs</p>
-                                        <p class="text-3xl font-bold mt-2">456</p>
-                                    </div>
-                                    <div class="bg-green-100 p-4 rounded-full">
-                                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <a href="#" class="mt-4 inline-flex items-center text-green-600 hover:text-green-800 text-sm">
-                                    Voir plus
-                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                    </svg>
-                                </a>
-                            </div>
-
-                            <!-- Carte Participants -->
-                            <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-purple-500">
-                                <div class="flex justify-between items-center">
-                                    <div>
-                                        <p class="text-sm text-gray-500">Participants Totaux</p>
-                                        <p class="text-3xl font-bold mt-2">8,901</p>
-                                    </div>
-                                    <div class="bg-purple-100 p-4 rounded-full">
-                                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <a href="#" class="mt-4 inline-flex items-center text-purple-600 hover:text-purple-800 text-sm">
-                                    Voir plus
-                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                    </svg>
-                                </a>
-                            </div>
-                    </div> --}}
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                        <!-- Carte Tontines -->
-                        <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-blue-500">
-                            <div class="flex justify-between items-center">
+                        <div class="bg-white rounded-xl shadow-md p-6 border-b-4 border-blue-500 transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105 transform">
+                            <div class="flex justify-between items-start">
                                 <div>
-                                    <p class="text-sm text-gray-500">Tontines Actives</p>
-                                    <p class="text-3xl font-bold mt-2">{{ number_format($stats['active_tontines'], 0, ',', ' ') }}</p>
+                                    <p class="text-sm text-gray-500 font-medium">Tontines Actives</p>
+                                    <p class="text-4xl font-extrabold text-gray-900 mt-2">
+                                        {{ number_format($stats['active_tontines'], 0, ',', ' ') }}
+                                    </p>
                                 </div>
-                                <div class="bg-blue-100 p-4 rounded-full">
-                                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
-                                    </svg>
+                                <div class="bg-blue-50 p-3 rounded-full text-blue-600">
+                                    <i class="fas fa-coins text-2xl"></i>
                                 </div>
                             </div>
-                            <a href="{{ route('superadmin.tontines.index') }}" class="mt-4 inline-flex items-center text-blue-600 hover:text-blue-800 text-sm">
+                            <a href="{{ route('superadmin.tontines.index') }}" class="mt-5 inline-flex items-center text-blue-600 hover:text-blue-800 text-sm font-semibold transition-colors duration-200">
                                 Voir plus
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                </svg>
+                                <i class="fas fa-arrow-right ml-2 text-xs"></i>
                             </a>
                         </div>
 
-                        <!-- Carte Gérants -->
-                        <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-500">
-                            <div class="flex justify-between items-center">
+                        <div class="bg-white rounded-xl shadow-md p-6 border-b-4 border-green-500 transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105 transform">
+                            <div class="flex justify-between items-start">
                                 <div>
-                                    <p class="text-sm text-gray-500">Gérants Actifs</p>
-                                    <p class="text-3xl font-bold mt-2">{{ number_format($stats['active_gerants'], 0, ',', ' ') }}</p>
+                                    <p class="text-sm text-gray-500 font-medium">Gérants Actifs</p>
+                                    <p class="text-4xl font-extrabold text-gray-900 mt-2">
+                                        {{ number_format($stats['active_gerants'], 0, ',', ' ') }}
+                                    </p>
                                 </div>
-                                <div class="bg-green-100 p-4 rounded-full">
-                                    <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                                    </svg>
+                                <div class="bg-green-50 p-3 rounded-full text-green-600">
+                                    <i class="fas fa-users-cog text-2xl"></i>
                                 </div>
                             </div>
-                            <a href="{{ route('superadmin.gerants.index') }}" class="mt-4 inline-flex items-center text-green-600 hover:text-green-800 text-sm">
+                            <a href="{{ route('superadmin.gerants.index') }}" class="mt-5 inline-flex items-center text-green-600 hover:text-green-800 text-sm font-semibold transition-colors duration-200">
                                 Voir plus
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                </svg>
+                                <i class="fas fa-arrow-right ml-2 text-xs"></i>
                             </a>
                         </div>
 
-                        <!-- Carte Participants -->
-                        <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-purple-500">
-                            <div class="flex justify-between items-center">
+                        <div class="bg-white rounded-xl shadow-md p-6 border-b-4 border-purple-500 transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105 transform">
+                            <div class="flex justify-between items-start">
                                 <div>
-                                    <p class="text-sm text-gray-500">Participants Totaux</p>
-                                    <p class="text-3xl font-bold mt-2">{{ number_format($stats['total_participants'], 0, ',', ' ') }}</p>
+                                    <p class="text-sm text-gray-500 font-medium">Participants Totaux</p>
+                                    <p class="text-4xl font-extrabold text-gray-900 mt-2">
+                                        {{ number_format($stats['total_participants'], 0, ',', ' ') }}
+                                    </p>
                                 </div>
-                                <div class="bg-purple-100 p-4 rounded-full">
-                                    <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
-                                    </svg>
+                                <div class="bg-purple-50 p-3 rounded-full text-purple-600">
+                                    <i class="fas fa-users text-2xl"></i>
                                 </div>
                             </div>
-                                <a href="{{ route('superadmin.participants.index') }}" class="mt-4 inline-flex items-center text-purple-600 hover:text-purple-800 text-sm">
-                                    Voir plus
-                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                    </svg>
-                                </a>
+                            <a href="{{ route('superadmin.participants.index') }}" class="mt-5 inline-flex items-center text-purple-600 hover:text-purple-800 text-sm font-semibold transition-colors duration-200">
+                                Voir plus
+                                <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Section Graphiques Principaux -->
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-                        <!-- Graphique en secteurs -->
                         <div class="bg-white rounded-2xl shadow-lg p-6">
-                            <h3 class="text-xl font-semibold mb-4">Tontines créées par mois</h3>
-                            <div class="chart-container h-80" data-type="doughnut">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Tontines créées par mois</h3>
+                            <div class="chart-container h-80 flex items-center justify-center">
                                 <canvas id="tontinesChart"></canvas>
                             </div>
                         </div>
 
-                        <!-- Graphique en barres -->
                         <div class="bg-white rounded-2xl shadow-lg p-6">
-                            <h3 class="text-xl font-semibold mb-4">Activité Mensuelle</h3>
-                            <div class="chart-container h-80">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Activité Mensuelle</h3>
+                            <div class="chart-container h-80 flex items-center justify-center">
                                 <canvas id="monthlyActivityChart"></canvas>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg p-6 mb-8">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Dernières Activités</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                                <div class="w-8 h-8 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                                <p class="text-gray-700"><span class="font-medium">Admin</span> a créé une nouvelle tontine "Épargne Solidaire". <span class="text-xs text-gray-500 ml-2">Il y a 5 min</span></p>
+                            </li>
+                            <li class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                                <div class="w-8 h-8 flex items-center justify-center bg-green-100 text-green-600 rounded-full">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <p class="text-gray-700"><span class="font-medium">Fatou Diallo</span> a rejoint la tontine "Objectif Maison". <span class="text-xs text-gray-500 ml-2">Il y a 30 min</span></p>
+                            </li>
+                            <li class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                                <div class="w-8 h-8 flex items-center justify-center bg-red-100 text-red-600 rounded-full">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                                <p class="text-gray-700">La tontine "Vacances 2025" a été clôturée. <span class="text-xs text-gray-500 ml-2">Il y a 1 heure</span></p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </main>
@@ -188,115 +129,195 @@
     @push('scripts')
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const ctx = document.getElementById('tontinesChart').getContext('2d');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Chart 1: Tontines créées par mois (Bar Chart)
+            const tontinesCtx = document.getElementById('tontinesChart').getContext('2d');
+            const tontinesData = @json(array_values($completeData));
+            const tontinesLabels = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
 
-        // Données formatées correctement
-        const chartData = {
-            labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
-            datasets: [{
-                label: 'Nombre de tontines',
-                data: @json(array_values($completeData)),
-                backgroundColor: 'rgba(59, 130, 246, 0.6)',
-                borderColor: 'rgba(59, 130, 246, 1)',
-                borderWidth: 1,
-                tension: 0.1
-            }]
-        };
-
-        new Chart(ctx, {
-            type: 'bar', // ou 'line' pour un graphique linéaire
-            data: chartData,
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        ticks: {
-                            precision: 0
+            new Chart(tontinesCtx, {
+                type: 'bar',
+                data: {
+                    labels: tontinesLabels,
+                    datasets: [{
+                        label: 'Nombre de Tontines',
+                        data: tontinesData,
+                        backgroundColor: 'rgba(59, 130, 246, 0.8)', // Blue 600 with opacity
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        borderWidth: 1,
+                        borderRadius: 6, // Rounded bars
+                        barPercentage: 0.7, // Adjust bar width
+                        categoryPercentage: 0.8 // Adjust space between categories
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false, // No legend for a single dataset
+                        },
+                        title: {
+                            display: false, // Title moved to H3
+                        },
+                        tooltip: {
+                            backgroundColor: '#1E293B', // Dark slate for tooltip
+                            titleFont: { size: 14, weight: 'bold' },
+                            bodyFont: { size: 14 },
+                            padding: 12,
+                            cornerRadius: 8,
+                            displayColors: false,
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(200, 200, 200, 0.2)', // Lighter grid lines
+                                drawBorder: false
+                            },
+                            ticks: {
+                                precision: 0,
+                                font: {
+                                    size: 12
+                                },
+                                color: '#6B7280' // Gray 500 for tick labels
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                font: {
+                                    size: 12
+                                },
+                                color: '#6B7280'
+                            }
                         }
                     }
                 }
-            }
-        });
-    });
+            });
 
-    document.addEventListener('DOMContentLoaded', function() {
-    const ctx = document.getElementById('monthlyActivityChart').getContext('2d');
+            // Chart 2: Activité Mensuelle (Line Chart for trends)
+            const activityCtx = document.getElementById('monthlyActivityChart').getContext('2d');
 
-    // Données dynamiques (à remplacer par vos données réelles)
-    const chartData = {
-        labels: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sep', 'Oct', 'Nov', 'Déc'],
-        datasets: [{
-            label: 'Tontines créées',
-            data: [12, 19, 8, 15, 12, 10, 7, 14, 11, 13, 9, 16],
-            backgroundColor: 'rgba(99, 102, 241, 0.7)',
-            borderColor: 'rgba(99, 102, 241, 1)',
-            borderWidth: 1,
-            borderRadius: 4, // Bords arrondis pour les barres
-            barPercentage: 0.6 // Largeur des barres
-        }, {
-            label: 'Participants',
-            data: [8, 15, 12, 10, 7, 14, 11, 13, 9, 16, 12, 19],
-            backgroundColor: 'rgba(244, 63, 94, 0.7)',
-            borderColor: 'rgba(244, 63, 94, 1)',
-            borderWidth: 1,
-            borderRadius: 4,
-            barPercentage: 0.6
-        }]
-    };
-
-    new Chart(ctx, {
-        type: 'bar',
-        data: chartData,
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    grid: {
-                        drawBorder: false
+            const activityData = {
+                labels: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sep', 'Oct', 'Nov', 'Déc'],
+                datasets: [
+                    {
+                        label: 'Nouvelles Tontines',
+                        data: [12, 19, 8, 15, 12, 10, 7, 14, 11, 13, 9, 16], // Example data
+                        backgroundColor: 'rgba(99, 102, 241, 0.6)', // Indigo 500 with opacity
+                        borderColor: 'rgba(99, 102, 241, 1)',
+                        borderWidth: 2,
+                        tension: 0.4, // Smooth lines
+                        pointRadius: 5, // Larger points
+                        pointBackgroundColor: 'rgba(99, 102, 241, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverRadius: 7
                     },
-                    ticks: {
-                        stepSize: 5
+                    {
+                        label: 'Nouveaux Participants',
+                        data: [8, 15, 12, 10, 7, 14, 11, 13, 9, 16, 12, 19], // Example data
+                        backgroundColor: 'rgba(244, 63, 94, 0.6)', // Rose 500 with opacity
+                        borderColor: 'rgba(244, 63, 94, 1)',
+                        borderWidth: 2,
+                        tension: 0.4,
+                        pointRadius: 5,
+                        pointBackgroundColor: 'rgba(244, 63, 94, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverRadius: 7
                     }
-                },
-                x: {
-                    grid: {
-                        display: false
+                ]
+            };
+
+            new Chart(activityCtx, {
+                type: 'line', // Changed to line chart for trends
+                data: activityData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                boxWidth: 20,
+                                padding: 20,
+                                font: {
+                                    size: 13,
+                                    weight: '600' // Semibold legend text
+                                },
+                                color: '#4B5563' // Gray 700 for legend
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: '#1E293B',
+                            titleFont: { size: 14, weight: 'bold' },
+                            bodyFont: { size: 14 },
+                            padding: 12,
+                            cornerRadius: 8,
+                            displayColors: true,
+                            intersect: false,
+                            mode: 'index',
+                            bodySpacing: 6
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(200, 200, 200, 0.2)',
+                                drawBorder: false
+                            },
+                            ticks: {
+                                stepSize: 5,
+                                font: {
+                                    size: 12
+                                },
+                                color: '#6B7280'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                font: {
+                                    size: 12
+                                },
+                                color: '#6B7280'
+                            }
+                        }
+                    },
+                    hover: {
+                        mode: 'nearest',
+                        intersect: true
+                    },
+                    animation: {
+                        duration: 1000, // Animation on chart load
+                        easing: 'easeOutQuart'
                     }
                 }
-            },
-            plugins: {
-                legend: {
-                    position: 'top',
-                    labels: {
-                        boxWidth: 12,
-                        padding: 16,
-                        usePointStyle: true
-                    }
-                },
-                tooltip: {
-                    backgroundColor: '#1E293B',
-                    titleFont: { size: 14 },
-                    bodyFont: { size: 14 },
-                    padding: 12,
-                    cornerRadius: 8,
-                    displayColors: true,
-                    intersect: false,
-                    mode: 'index'
-                }
-            },
-            interaction: {
-                mode: 'nearest',
-                axis: 'x',
-                intersect: false
+            });
+        });
+    </script>
+
+    <style>
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
             }
         }
-    });
-});
-    </script>
+
+        .animate-fade-in-up {
+            animation: fadeInScale 0.6s ease-out forwards;
+        }
+    </style>
     @endpush
 </x-app-layout>

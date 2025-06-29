@@ -69,7 +69,6 @@
                 </x-dropdown>
             </div>
 
-            <!-- Hamburger Menu (Mobile) -->
             <div class="md:hidden flex items-center">
                 <button @click="open = !open" class="p-2 rounded-md text-gray-600 hover:text-indigo-600 focus:outline-none transition">
                     <svg class="h-8 w-8" :class="{ 'hidden': open, 'block': !open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -113,7 +112,4 @@
             </div>
         </div>
     </div>
-
-
-
 </nav>

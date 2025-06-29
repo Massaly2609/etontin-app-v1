@@ -50,6 +50,15 @@ class GerantParticipantController extends Controller
         return view('gerant.participants.show', compact('participant', 'tontines'));
     }
 
+    public function edit(Tontine $tontine)
+    {
+        // Vérifier que le gérant est bien responsable de cette Tontine
+        // if ($tontine->gerant_id !== auth()->user()->id) {
+        //     abort(403, 'Accès non autorisé.');
+        // }
+
+        return view('gerant.tontines.edit', compact('tontine'));
+    }
     /**
      * Supprime un participant.
      */
